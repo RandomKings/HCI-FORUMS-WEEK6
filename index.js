@@ -43,11 +43,11 @@ let bankBalance = 1000;
                     }
                     
                     if (bankBalance >= transferAmount) {
-                        bankBalance -= transferAmount;
                         temp1 = prompt("Please enter your passcode to complete the transaction.")
                         if(temp1 == currentPasscode){
                             updateBalance();
                             updateTransactionHistory(`Transferred $${transferAmount} to ${trnfrTo} `);
+                            bankBalance -= transferAmount;
                             break
                         }
                         else{
