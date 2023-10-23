@@ -48,12 +48,14 @@ let bankBalance = 1000;
                         if(temp1 == currentPasscode){
                             updateBalance();
                             updateTransactionHistory(`Transferred $${transferAmount} to ${trnfrTo} `);
+                            break
                         }
                         else{
                             times += 1
                             alert("WRONG PASSCODE")}
                     } else {
                         alert("Insufficient funds.");
+                        break
                     }
                 }else{
                     alert("check input")
