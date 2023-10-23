@@ -1,0 +1,27 @@
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://images.alphacoders.com/118/1186766.png");
+    background-size: cover;
+    text-align: center;
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+body, h1, h2, p, li {
+    color: white;
+}
+button{
+    background-color: red; 
+    color: white; border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 900){
+    .login-container.input{
+        background-color: aqua;
+    }
+}
