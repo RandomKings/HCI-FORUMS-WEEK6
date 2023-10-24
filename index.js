@@ -1,3 +1,4 @@
+let times = 0
 var currentPasscode ="Passco";
 function requestPasscode() {
     var passcode = prompt("Please enter your 6-digit passcode: note its Passco");
@@ -40,21 +41,30 @@ function transferMoney() {
     } else if (bankBalance < transferAmount) {
         alert("Insufficient funds.");
     } else {
-        const temp1 = prompt("Please enter your passcode to complete the transaction.");
+        
+            const temp1 = prompt("Please enter your passcode to complete the transaction.");
 
-        if (temp1 !== null) { 
-            if (temp1 === currentPasscode) {
-                bankBalance -= transferAmount;
-                updateBalance();
-                updateTransactionHistory(`Transferred $${transferAmount} to ${trnfrTo}`);
-            } else {
-                alert("Wrong passcode. Transaction canceled.");
+            if (temp1 !== null) {
+                if (temp1 === currentPasscode && times<3) {
+                    bankBalance -= transferAmount;
+                    updateBalance();
+                    updateTransactionHistory(`Transferred $${transferAmount} to ${trnfrTo}`);
+                } else {
+                    alert("Wrong passcode. Transaction canceled.");
+                    times+=1
+                    if (times>2){
+                        alert("too many attempts logging out!!!!!!")
+                        location.assign("index.html")
+                    }
+                
             }
         } else {
             alert("Transaction canceled.");
         }
     }
 }
+
+
 
 
 
